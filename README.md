@@ -11,9 +11,9 @@ The optimization problem is solved in its dual form
 ### Usage:
 To utilize MC-SVM in your projects, follow these steps:
 
-__Download the Code__: Clone the repository containing the MC-SVM implementation.
-__Configure Parameters__: Adjust the value of $\tau$, the kernels and other parameters according to your application requirements.
-__Train the Model__: Provide your dataset and train the MC-SVM model using the provided training algorithm.
+__Download the Code__: Clone the repository containing the MC-SVM implementation.\n
+__Configure Parameters__: Adjust the value of $\tau$, the kernels and other parameters according to your application requirements.\n
+__Train the Model__: Provide your dataset and train the MC-SVM model using the provided training algorithm.\n
 __Evaluate Performance__: Evaluate the model's performance on your test dataset and analyze its behavior under different cost scenarios.
 
 ### Example:
