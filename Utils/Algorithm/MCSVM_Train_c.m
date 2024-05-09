@@ -1,4 +1,4 @@
-function [alpha] = SSVM_Train_c(Xtr, Ytr, Xcl_p, Ycl_p, kernel, param, tau, eta, alpha_bar)
+function [alpha] = MCSVM_Train_c(Xtr, Ytr, Xcl_p, Ycl_p, kernel, param, tau, eta, alpha_bar)
 
 n = size(Xcl_p,1);
 
