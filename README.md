@@ -4,8 +4,8 @@ Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed t
 
 $$
 \begin{align}
-& &\underset{\mathbf{w}, \mathbf{c}, \boldsymbol{\xi}_1, \ldots, \boldsymbol{\xi}_n}{\text{minimize}}\\
-& & \frac{1}{2\eta} 
+& &\underset{\mathbf{w}, \mathbf{c}, \boldsymbol{\xi}_1, \ldots, \boldsymbol{\xi}_n}{\text{minimize}} \frac{1}{2\eta} 
+\mathbf{w}^\top \mathbf{w} 
 \end{align}
 $$
 
