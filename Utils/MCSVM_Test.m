@@ -1,4 +1,4 @@
-function y = MCVM_Test(Xtr, Ytr, Xts, alpha_bar, b, b_eps, kernel, param, eta)
+function y = MCSVM_Test(Xtr, Ytr, Xts, alpha_bar, b, b_eps, kernel, param, eta)
 
 K = KernelMatrix(Xtr,Xts,kernel,param);
 D = diag(Ytr);
