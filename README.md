@@ -2,20 +2,9 @@
 
 Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed to accommodate multiple cost scenarios. By introducing multiple weighting parameters $\tau$,  MC-SVM adapts the cost function to balance false positive and false negative errors, enhancing the model's robustness across diverse scenarios. The result is a separation hyperplane indipendent from the sample probability of the data.
 
-$
-\begin{equation*}
-f(x) = x^2+1
-\end{equation*}
-$
-
-
 $$
 \begin{aligned}
 & \underset{\mathbf{w}, \mathbf{c}, \boldsymbol{\xi}_1, \ldots, \boldsymbol{\xi}_n}{\text{minimize}}
-& & \frac{1}{2\eta} \mathbf{w}^\top \mathbf{w} + \frac{1}{2} \sum_{k=1}^{m} \sum_{i=1}^{n} \left( (1 - 2\tau_k)y_i + 1 \right) \xi_{i,k} \\
-& \text{subject to}
-& & y_i (\mathbf{w}^\top \varphi(\mathbf{x}_i) - c_k) \leq \xi_{i,k} - 1, \\
-& & & \xi_{i,k} \geq 0, \quad i \in [n], \ k \in [m].
 \end{aligned}
 $$
 
