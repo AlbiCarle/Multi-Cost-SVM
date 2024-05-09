@@ -20,7 +20,6 @@ else
 
     bii = -eta*(K'*(D*alpha)) +Y_SV;
     
-    
 end
 
 b = randsample(bii,1);
