@@ -2,10 +2,10 @@ clc; clear all; close all;
 
 % Configure it properly on your own device
         
-addpath ./Utils/Algorithm/
-addpath ./Utils/Evaluation_Visualization/
-addpath ./Utils/Gaussian_Data_Generation/
-addpath ./Utils/Various/
+addpath ../Utils/Algorithm/
+addpath ../Utils/Evaluation_Visualization/
+addpath ../Utils/Gaussian_Data_Generation/
+addpath ../Utils/Various/
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
