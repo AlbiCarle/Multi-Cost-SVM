@@ -1,4 +1,6 @@
 clc; clear all; close all;
+
+% Configure it properly on your own device
         
 addpath ./Utils/Algorithm/
 addpath ./Utils/Evaluation_Visualization/
@@ -167,7 +169,7 @@ plot_MCSVM(Xtr1.*S1+C1, Ytr1, Xts1.*S1+C1, Yts1, alpha15, 0, 0, kernel, param, e
 hold on
 plot_MCSVM(Xtr2.*S2+C2, Ytr2, Xts2.*S2+C2, Yts2, alpha25, 0, 0, kernel, param, eta, color2,'--',0);
 
-tau10 = linspace(0.1,0.9,10);
+tau10 = [0.1000, 0.1889, 0.2778, 0.3667, 0.4556, 0.5444, 0.6333, 0.7222, 0.8111, 0.9000];
 
 alpha110 = MCSVM_Train(Xtr1, Ytr1, kernel, param, tau10, eta);
 alpha210 = MCSVM_Train(Xtr2, Ytr2, kernel, param, tau10, eta);
@@ -183,9 +185,6 @@ plot_MCSVM(Xtrtilde1, Ytr1, Xts1.*S1+C1, Yts1, alpha110, 0, 0, kernel, param, et
 
 legend('off');
 
-clf
-figure('Position', [100, 100, 1000, 300]);
-
 subplot(1, 3, 2);
 gscatter(Xtstilde2(:,1), Xtstilde2(:,2), Yts2, 'rb')
 hold on
@@ -194,12 +193,9 @@ plot_MCSVM(Xtr2.*S2+C2, Ytr2, Xts2.*S2+C2, Yts2, alpha210, 0, 0, kernel, param, 
 
 legend('off');
 
-clf
-figure('Position', [100, 100, 1000, 300]);
-
 % Set title
 subplot(1, 3, 3);
 
-plot_MCSSVM(Xtr1.*S1+C1, Ytr1, Xts1.*S1+C1, Yts1, alpha110, 0, 0, kernel, param, eta, color1 ,'-',0);
+plot_MCSVM(Xtr1.*S1+C1, Ytr1, Xts1.*S1+C1, Yts1, alpha110, 0, 0, kernel, param, eta, color1 ,'-',0);
 hold on
 plot_MCSVM(Xtr2.*S2+C2, Ytr2, Xts2.*S2+C2, Yts2, alpha210, 0, 0, kernel, param, eta, color2,'--',0);
