@@ -13,6 +13,8 @@ __System of SVMs__: The algorithm constructs a system of $m$ SVMs using the same
 
 The optimization problem is solved in its dual form
 
+<img src = Images/minimum2.png width="300">
+
 ### Usage:
 To utilize MC-SVM in your projects, follow these steps:
 
