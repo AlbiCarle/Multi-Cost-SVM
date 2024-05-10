@@ -17,7 +17,7 @@ The optimization problem is solved in its dual form
 
 leading to the separation hyperplane 
 
-<img src = Images/sep.png width="200">
+<img src = Images/sep.png width="150">
 
 The error in the prediction (false or negative ratio) is then controlled using the following algorithm, based on the quantile regression idea that, discarding the regularization parameter (possible because we computed an independent hyperplane with the algorithm above), the weighting parameter corresponds to the false negative ratio:
 
