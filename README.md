@@ -9,7 +9,7 @@ Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed t
 This algorithm was inspired by the concept of probabilistic safety region 
 
 <div style="text-align:center;">
-    <img src="Images/coolGaussians.png" width="800">
+    <img src="Images/Phi.png" width="200">
 </div>
 
 ### Key Features:
