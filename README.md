@@ -6,11 +6,15 @@ Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed t
 
 <img src = Images/minimum1.png width="300">
 
-This algorithm was inspired by the concept of probabilistic safety region 
+This algorithm was inspired by the concept of _Probabilistic Safety Region_ (PSR) 
 
 <div style="text-align:center;">
     <img src="Images/Phi.png" width="200">
 </div>
+
+i.e., the region where in high probability is possible to observe the event $S$, that, we can suppose, represents a "safe" situation. It is interesting to note, and these considerations are reported in the code, that for exponential distributions the PSR takes the interesting form of a radius controllable set:
+
+
 
 ### Key Features:
 __Parameterized Cost Function__: MC-SVM incorporates a parameter $\tau$ to influence the cost function's behavior towards different types of errors. This parameterization allows to weight the SVMs with different weighting parameters, reducing the unbalanceness of the data and helping training a more robust algorithm.
