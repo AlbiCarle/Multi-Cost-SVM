@@ -32,7 +32,7 @@ for p_a = p_A_array
 
     i = i+1;
 
-    [X_p,Y_p] = generate_data_Albi(n, p_a, p_O, mu1, mu2, S1, S2);
+    [X_p,Y_p] = generate_data_2(n, p_a, p_O, mu1, mu2, S1, S2);
     
     X = [X; X_p]; Y = [Y;Y_p];
 
@@ -112,7 +112,7 @@ Epsilon = [0.01, 0.05, 0.1, 0.5];
 
 P_A = 0.5;
 
-[X_p,Y_p] = generate_data_Albi(n, P_A, p_O, mu1, mu2, S1, S2);
+[X_p,Y_p] = generate_data_2(n, P_A, p_O, mu1, mu2, S1, S2);
     
 X = [X; X_p]; Y = [Y;Y_p];
 
@@ -157,7 +157,6 @@ for epsilon = Epsilon
     
     gamma = 0.5*log(det(S1)/det(S2)); 
     Gamma_x = diag(0.5*(E'-mu1)'*A1*(E'-mu1)-0.5*(E'-mu2)'*A2*(E'-mu2)+gamma);
-    
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -187,7 +186,6 @@ for epsilon = Epsilon
     legend off
     hold off
     title(['$\varepsilon \; = \; $', num2str(epsilon)],'Interpreter','latex','FontSize',16);
-
 
 end
 
