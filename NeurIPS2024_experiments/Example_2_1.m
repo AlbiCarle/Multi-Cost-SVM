@@ -101,7 +101,6 @@ for p_a = p_A_array
     hold off
     title(['$p_S \; = \; $', num2str(p_a)],'Interpreter','latex','FontSize',16);
 
-
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
