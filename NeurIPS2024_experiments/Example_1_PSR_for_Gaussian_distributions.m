@@ -1,27 +1,16 @@
 clc; clear all; close all;
 
-addpath /Users/albertocarlevaro/Documents/Albi/Fabrizio&Teo/'Probabilistic Safety regions'/'Conformal Scalable Classifiers'/SVM
+clc; clear all; close all;
+
+addpath ./Utils/Algorithm/
+addpath ./Utils/Evaluation_Visualization/
+addpath ./Utils/Gaussian_Data_Generation/
+addpath ./Utils/Various/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 mu1 = [4;6]; S1 = [1.3 0.9; 0.9 1.3];
 mu2 = [3;8]; S2 = [.6 0; 0 1.4];
-
-%mu1 = [1;-1]; S1 = [1 0.5; 0.5 1];
-%mu2 = [-1;1]; S2 = [0.2 0.1; 0.1 1.4];
-
-%mu1 = [4;6]; S1 = [1.0 0.2; 0.2 1];
-%mu2 = [3;8]; S2 = 8*[1 0.2; 0.2 1];
-
-%mu1 = [3;8]; S1 = [2 0; 0 1];
-%mu2 = [3;8]; S2 = [3 0; 0 1];
-
-%mu1 = [4;6]; S1 = [1.3 0.9; 0.9 1.3];
-%mu2 = [3;8]; S2 = [.6 0; 0 1.4];
-
-%mu1 = [5;7]; S1 = eye(2,2);
-%mu2 = [3;8]; S2 = 2*S1;
-
-%mu1 = [-1;-1]; S1 = [2 0.3;0.3 0.5];
-%mu2 = [1;1]; S2 = [1.6 0.1; 0.1 0.2];
 
 p_O = 0.0;
 
@@ -34,33 +23,6 @@ p_A_array = [0.1, 0.2, 0.5, 0.9];
 epsilon = 0.05;
 
 mycolor =  [0, 1, 0];
-
-% Given starting color [R, G, B]
-starting_color = [    233    237    247]/255;
-% Given ending color [R, G, B]
-ending_color = [79, 113, 190]/255;
-
-% Given starting color [R, G, B]
-ending_color = [0, 100, 0] / 255; % Dark green
-
-% Given ending color [R, G, B]
-starting_color = [144, 238, 144] / 255; % Light green
-
-% Number of shades
-num_shades = 256;
-
-% Create an empty matrix to store the shaded colors
-shaded_colors = zeros(num_shades, 3);
-
-% Generate the shaded colors
-for i = 1:num_shades
-    shade_factor = (i - 1) / (num_shades - 1);  % Varies from 0 to 1
-    
-    % Linear interpolation for each component (R, G, and B)
-    shaded_colors(i, :) = starting_color + (ending_color - starting_color) * shade_factor;
-end
-
-%disp(shaded_colors);
 
 i = 0;
 
@@ -95,13 +57,13 @@ for p_a = p_A_array
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     dimGrid=50; 
+
+    x=linspace(min(Xts(:,1)), max(Xts(:,1)), dimGrid);
+    y=linspace(min(Xts(:,2)), max(Xts(:,2)), dimGrid);
     
     [K1, Z1] = meshgrid(linspace(min(Xts(:,1))-1, max(Xts(:,1))+1,dimGrid),...
                         linspace(min(Xts(:,2))-1, max(Xts(:,2))+1,dimGrid));
     
-    x=linspace(min(Xts(:,1)), max(Xts(:,1)), dimGrid);
-    y=linspace(min(Xts(:,2)), max(Xts(:,2)), dimGrid);
-       
     E=[K1(:) Z1(:)];
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,6 +105,8 @@ for p_a = p_A_array
 
 
 end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Epsilon = [0.01, 0.05, 0.1, 0.5];
 
@@ -239,8 +203,6 @@ y=linspace(min(Xts(:,2)), max(Xts(:,2)), dimGrid);
    
 E=[K1(:) Z1(:)];
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% XXXXX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 A1 = inv(S1);
 A2 = inv(S2);
 
@@ -260,7 +222,3 @@ ax = gca;
 colormap(gca, mycolor);
 title('PSR decision surface ($\rho(p_S,\varepsilon) = 0$)','Interpreter','latex','FontSize',16);
 legend('$\textrm{\textbf{x}}\hat{=}U$','$\textrm{\textbf{x}}\hat{=}S$','PSR surface', 'Interpreter','latex','Fontsize',16)
-
-saveas(gcf, 'PSR_pS_new.fig');
-
-cool_image_to_pdf('PSR_pS_new', 'PSR_pS_new')
