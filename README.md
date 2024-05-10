@@ -6,6 +6,8 @@ Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed t
 
 <img src = Images/minimum1.png width="300">
 
+This algorithm was inspired by the concept of probabilistic safety region 
+
 ### Key Features:
 __Parameterized Cost Function__: MC-SVM incorporates a parameter $\tau$ to influence the cost function's behavior towards different types of errors. This parameterization allows to weight the SVMs with different weighting parameters, reducing the unbalanceness of the data and helping training a more robust algorithm.
 
