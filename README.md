@@ -15,6 +15,7 @@ The optimization problem is solved in its dual form
 
 <img src = Images/minimum2.png width="300">
 
+leading to the separation hyperplane <img src = >
 ### Usage:
 To utilize MC-SVM in your projects, follow these steps:
 
