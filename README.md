@@ -2,7 +2,7 @@
 
 Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed to accommodate multiple cost scenarios. By introducing multiple weighting parameters $\tau$,  MC-SVM adapts the cost function to balance false positive and false negative errors, enhancing the model's robustness across diverse scenarios. The result is a separation hyperplane indipendent from the sample probability of the data.
 
-<img src = Images/minimum1.png>
+<img src = Images/minimum1.png width="300">
 
 ### Key Features:
 __Parameterized Cost Function__: MC-SVM incorporates a parameter $\tau$ to influence the cost function's behavior towards different types of errors. This parameterization allows to weight the SVMs with different weighting parameters, reducing the unbalanceness of the data and helping training a more robust algorithm.
