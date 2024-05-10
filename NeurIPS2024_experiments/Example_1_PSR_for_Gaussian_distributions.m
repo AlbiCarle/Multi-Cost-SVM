@@ -1,7 +1,5 @@
 clc; clear all; close all;
 
-clc; clear all; close all;
-
 addpath ./Utils/Algorithm/
 addpath ./Utils/Evaluation_Visualization/
 addpath ./Utils/Gaussian_Data_Generation/
