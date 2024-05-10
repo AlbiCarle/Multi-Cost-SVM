@@ -26,7 +26,7 @@ __Evaluate Performance__: Evaluate the model's performance on your test dataset 
 
 ### Example:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Matlab
 
@@ -57,8 +57,7 @@ y_pred_ts = SSVM_Test(Xtr, Ytr, Xts_p, alpha_bar, b, 0, kernel, param, eta);
 
 disp(['False positive rate:',num2str(FPR_SSVM)])
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ### Contributions and Feedback:
 Contributions to the MC-SVM algorithm are welcome! Feel free to submit bug reports, feature requests, or pull requests to improve the algorithm's functionality and usability.
 
