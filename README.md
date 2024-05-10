@@ -1,6 +1,6 @@
 # Multi-Cost-SVM (and Probabilistic Safety Regions for exponential distributions)
 
-<img src = Images/coolGaussians.png width ="1000">
+<img src = Images/coolGaussians.png width ="800">
 
 Multi Cost SVM (MC-SVM) is a variant of Support Vector Machines (SVM) designed to accommodate multiple cost scenarios. By introducing multiple weighting parameters $\tau$,  MC-SVM adapts the cost function to balance false positive and false negative errors, enhancing the model's robustness across diverse scenarios. The result is a separation hyperplane indipendent from the sample probability of the data.
 
