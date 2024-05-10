@@ -19,6 +19,10 @@ leading to the separation hyperplane
 
 <img src = Images/sep.png width="150">
 
+The error in the prediction (false or negative ratio) is then controlled using the following algorithm, based on the quantile regression idea that, discarding the regularization parameter (possible because we computed an independent hyperplane with the algorithm above), the weighting parameter corresponds to the false negative ratio:
+
+<img src = Images/Minimum3.png width="150">
+
 ### Usage:
 To utilize MC-SVM in your projects, follow these steps:
 
@@ -32,9 +36,9 @@ __Evaluate Performance__: Evaluate the model's performance on your test dataset 
 
 ### Example:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 Matlab
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 _For a dataset composed by data sampled with different probabilities_
 
@@ -42,18 +46,26 @@ Tau  = rand(1,9);
 m = size(Tau,2);
 
 kernel = 'polynomial';
+
 param = 3;
+
 eta = .001;
 
 alpha_bar = MCSVM_Train(Xtr, Ytr, kernel, param, Tau, eta); # best hyperplane common to all the data
 
 _Specializing to a dataset with a known (or estimated) sample probability_
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 tau = 1-epsilon; # to control the false positives 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 alpha_c = SSVM_Train_c(Xtr, Ytr, Xcl_p, Ycl_p, kernel, param, tau, eta, alpha_bar);
 
 b = offset_c(Xtr, Ytr, Xcl_p, Ycl_p, alpha_c, kernel, param, eta, tau, alpha_bar); # best offset that realizes the control of the false positive ration on the desired (calibration) set.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 _test_
 
