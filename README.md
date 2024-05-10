@@ -21,7 +21,7 @@ leading to the separation hyperplane
 
 The error in the prediction (false or negative ratio) is then controlled using the following algorithm, based on the quantile regression idea that, discarding the regularization parameter (possible because we computed an independent hyperplane with the algorithm above), the weighting parameter corresponds to the false negative ratio:
 
-<img src = Images/Minimum3.png width="150">
+<img src = Images/Minimum3.png width="300">
 
 ### Usage:
 To utilize MC-SVM in your projects, follow these steps:
